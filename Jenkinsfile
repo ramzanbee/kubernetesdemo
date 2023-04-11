@@ -41,7 +41,7 @@ always {
 }
 }
 }
-stage {
+stage ('trivyscan') {
 steps {
 script {
 sh '''
