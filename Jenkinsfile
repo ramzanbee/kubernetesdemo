@@ -51,13 +51,13 @@ apk --no-cache add curl || true
 curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl > html.tpl
 trivy image --ignore-unfixed --format template --template "@html.tpl" -o cve_report.html ${image_name}
 mkdir publish
-cp -r cve_report.html /home/jenkins/workspace/mtc_jobs/cde-app-shell/bh-devops-CI-workspace/publish
+cp -r cve_report.html $WORKSPACE/publish
 '''
 publishHTML([
 allowMissing: false,
  alwaysLinkToLastBuild: false,
 keepAll: false,
-reportDir: '/home/jenkins/workspace/mtc_jobs/cde-app-shell/bh-devops-CI-workspace/publish',
+reportDir: '$WORKSPACE/publish',
 reportFiles: 'cve_report.html',
 reportName: 'Trivy Scan',
 reportTitles: 'Trivy Scan'
