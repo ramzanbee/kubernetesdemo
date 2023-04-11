@@ -43,7 +43,7 @@ always {
 }
 stage ('deployment') {
 steps {
-withCredentials([string(credentialsId: 'Kubernetes', variable: 'KUBE_API_TOKEN')]) {
+withCredentials([string(credentialsId: 'kubernetes', variable: 'KUBE_API_TOKEN')]) {
 sh '''
 sh $WORKSPACE/cert/set-k8s-context.sh $KUBE_API_EP $KUBE_API_TOKEN $CERT
 kubectl get nodes --insecure-skip-tls-verify
