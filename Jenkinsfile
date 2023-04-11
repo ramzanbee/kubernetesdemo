@@ -57,7 +57,7 @@ publishHTML([
 allowMissing: false,
  alwaysLinkToLastBuild: false,
 keepAll: false,
-reportDir: '$WORKSPACE/publish',
+reportDir: 'publish',
 reportFiles: 'cve_report.html',
 reportName: 'Trivy Scan',
 reportTitles: 'Trivy Scan'
