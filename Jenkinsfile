@@ -27,8 +27,8 @@ sh '''
 docker login -u $DOCKER_USR -p $DOCKER_PSW
 cd $WORKSPACE
 docker build -t demo1 .
-docker tag demo1:latest ramzanbee/demo1:latest
-docker push ramzanbee/demo1:latest '''
+docker tag demo1:latest amukrishna05/demo1:latest
+docker push amukrishna05/demo1:latest '''
 }
 }
 stage ("Linting Dockerfile") {
