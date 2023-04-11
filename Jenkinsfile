@@ -12,7 +12,7 @@ pipeline {
         stage ('git-checkout') {
             steps {
                 cleanWs()
-                git 'https://github.com/hemanthkatkozu/hello-world.git'
+                git 'https://github.com/ramzanbee/kubernetesdemo.git'
             }
         }
         stage ('maven-build') {
