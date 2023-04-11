@@ -25,6 +25,7 @@ stage ('docker-build') {
 steps {
 sh '''
 docker login -u $DOCKER_USR -p $DOCKER_PSW
+docker rmi -f $(docker images)
 cd $WORKSPACE
 docker build -t demo1 .
 docker tag demo1:latest amukrishna05/demo1:latest
