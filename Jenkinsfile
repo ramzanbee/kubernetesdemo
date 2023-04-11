@@ -33,11 +33,9 @@ docker push ramzanbee/demo1:latest '''
 }
 stage ("Linting Dockerfile") {
 agent {
-docker {
 label 'docker'
 image 'pipelinecomponents/hadolint'
 reuseNode true
-}
 }
 steps {
 sh 'hadolint ./Dockerfile | tee -a dockerfile_lint.txt'
