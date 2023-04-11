@@ -41,7 +41,7 @@ always {
 }
 }
 }
- stage {
+stage {
 steps {
 script {
 sh '''
