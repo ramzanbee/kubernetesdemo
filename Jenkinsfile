@@ -47,7 +47,7 @@ script {
 sh '''
 image_name=hemanth:latest
 echo $image_name
-apk --no-cache add curl
+apk --no-cache add curl || true
 curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl > html.tpl
 trivy image --ignore-unfixed --format template --template "@html.tpl" -o cve_report.html ${image_name}
 mkdir publish
